@@ -11,6 +11,7 @@
         density="compact"
         v-model="userData.password"
         label="Password"
+        type="password"
       ></v-text-field>
 
       <v-btn block class="mt-2" @click="handleLogin">Login</v-btn>
@@ -30,7 +31,7 @@ export default {
   },
   methods: {
     handleLogin() {
-      this.$store.dispatch("login", this.userData);
+      this.$store.dispatch("userStore/login", this.userData);
     },
   },
 };
