@@ -18,7 +18,6 @@ export default {
   actions: {
     async fetchTodos({ commit, rootGetters }) {
       const userId = rootGetters["userStore/getUser"].id;
-
       try {
         const response = await axios.post(
           "http://localhost:4000/todos/findall",
@@ -26,7 +25,6 @@ export default {
             userId,
           }
         );
-
         commit("setTodos", response.data);
       } catch (error) {
         console.error(error);
